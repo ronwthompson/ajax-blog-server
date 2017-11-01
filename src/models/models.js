@@ -67,7 +67,7 @@ function editOne (body, id) {
 }
 
 function readFile(){
-    let current = JSON.parse(fs.readFileSync('./server/storage.json', 'utf-8'))
+    let current = JSON.parse(fs.readFileSync('./src/storage.json', 'utf-8'))
     if (current.data){
         posts = current.data
     }
@@ -75,7 +75,7 @@ function readFile(){
 
 function writeFile(){
     let jsonContent = JSON.stringify({posts})
-    fs.writeFileSync('./server/storage.json', jsonContent)
+    fs.writeFileSync('./src/storage.json', jsonContent)
 }
 
 module.exports = { getAll, create, deleteOne, editOne }
